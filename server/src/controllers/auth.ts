@@ -15,6 +15,16 @@ export const register = async (req: Request, res: Response) => {
     });
     return;
   }
+    if (password.length < 8) {
+    res.status(400).json({
+    success: false,
+    data: null,
+    error: {
+      message: 'La contraseña debe tener al menos 8 caracteres',
+    },
+  });
+  return;
+  }
 
   const hashedPassword = await bcrypt.hash(password, 10);
 

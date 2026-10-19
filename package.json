@@ -6,6 +6,7 @@
   "scripts": {
     "dev:client": "npm run dev --prefix client",
     "dev:server": "npm run dev --prefix server",
+    "dev": "nodemon --watch src --ext ts --exec \"tsx src/index.ts\"",
     "install:all": "npm install --prefix client && npm install --prefix server",
     "test:02": "node tests/lesson-02.js",
     "test:03": "node tests/lesson-03.js",
